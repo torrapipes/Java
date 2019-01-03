@@ -14,3 +14,4 @@ public class Droid {
       System.out.println("Battery decreased to " + batteryLevel + "%");
       
     }
+}
