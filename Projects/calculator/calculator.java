@@ -21,7 +21,7 @@ class Calculator {
       }
       else{
         int division = a / b;
-          return division;
+        return division;
       }
       
       }
