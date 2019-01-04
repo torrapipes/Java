@@ -1,3 +1,5 @@
+// This program imitates a very basic human behavior from a robot perspective.
+
 public class Droid {
   
     int batteryLevel;
@@ -25,7 +27,7 @@ public class Droid {
         else {
           
           System.out.println("Droid is charging...");
-          System.out.println("Battery Level is " + batteryLevel + "%");
+          System.out.println("Battery level is " + batteryLevel + "%");
           
         }
     }
@@ -77,4 +79,3 @@ public class Droid {
          
      }
     
-  }
