@@ -2,60 +2,79 @@ public class Droid {
   
     int batteryLevel;
     public Droid() {
-      
-        batteryLevel = 100;
-      
-    }
     
-    public void activate() {
-      
-        System.out.println("Activated. How can I help you?");
+        batteryLevel = 100;
+    
+  }
+  
+    public void turnOn() {
+    
+        System.out.println("Hello human, how can I help you?");
         batteryLevel = batteryLevel - 5;
-        System.out.println("Battery decreased to " + batteryLevel + "%");
-      
-    }
-
+    
+  }
+  
     public void chargeBattery(int hours) {
     
         batteryLevel = batteryLevel + hours; 
         if (batteryLevel > 100) {
             batteryLevel = 100;
       	    System.out.println("Battery Level is " + batteryLevel + "% Droid fully charged. Please disconnect.");
+          
         }
         else {
           
-            System.out.println("Droid is charging...");
-            System.out.println("Battery Level is " + batteryLevel + "%");
+          System.out.println("Droid is charging...");
+          System.out.println("Battery Level is " + batteryLevel + "%");
           
         }
     }
+       
     public int checkBatteryLevel() {
        
-        System.out.println("Battery Level is " + batteryLevel + "%");
+        
+      	if (batteryLevel < 30) {
+          
+            System.out.println("I'm about to die... Please charge me :( (" + batteryLevel + "%)");
+          
+        }
+      	else {
+          
+            System.out.println("Battery is all good, don't you worry! (" + batteryLevel + "%)");
+          
+        }
       	return batteryLevel;
        
      }
       
-    public void hover(int feet) {
+     public void hover(int feet) {
          
-        if (feet > 2) {
-            System.out.println("Error! I cannot hover above 2 feet.");    
+         if (feet > 2) {
+             System.out.println("Error! I cannot hover above 2 feet.");    
          }
-        else {
+         else {
            
-            System.out.println("Hovering...");
-            batteryLevel = batteryLevel - 20;
-            System.out.println("Battery Level is " + batteryLevel + "%");
+           System.out.println("Hovering...");
+           batteryLevel = batteryLevel - 20;
            
          }
      }
-    
-    public static void main(String[] args) {
+  
+  	 public void turnOff() {
        
-        Droid myDroid = new Droid();
-        myDroid.activate();
-        myDroid.chargeBattery(3);
-        myDroid.hover(2);
-        
-    } 
-}
+         System.out.println("See you! :)");
+       
+     }
+     
+     public static void main(String[] args) {
+       
+         Droid myDroid = new Droid();
+       	 myDroid.turnOn();
+         myDroid.chargeBattery(3);
+       	 myDroid.hover(2);
+         myDroid.checkBatteryLevel();
+       	 myDroid.turnOff();
+         
+     }
+    
+  }
