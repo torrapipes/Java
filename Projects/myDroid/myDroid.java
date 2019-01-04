@@ -49,4 +49,13 @@ public class Droid {
            
          }
      }
+    
+    public static void main(String[] args) {
+       
+        Droid myDroid = new Droid();
+        myDroid.activate();
+        myDroid.chargeBattery(3);
+        myDroid.hover(2);
+        
+    } 
 }
