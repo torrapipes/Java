@@ -1,6 +1,6 @@
 // This programs works as a calculator for two parameters, it adds, substracts, divides and calculates the modulo.
 
-class Calculator {
+class calculator {
   
     public Calculator() {
       
