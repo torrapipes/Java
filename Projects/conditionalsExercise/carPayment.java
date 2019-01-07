@@ -1,6 +1,6 @@
 // This program calculates the monthly payment of a car.
 
-public class CarLoan {
+public class carPayment {
 	public static void main(String[] args) {
     
     int carLoan = 10000;
