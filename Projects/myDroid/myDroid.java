@@ -1,6 +1,6 @@
 // This program imitates a very basic human behavior from a robot perspective.
 
-public class Droid {
+public class myDroid {
   
     int batteryLevel;
     public Droid() {
@@ -75,7 +75,6 @@ public class Droid {
          myDroid.chargeBattery(3);
        	 myDroid.hover(2);
          myDroid.checkBatteryLevel();
-       	 myDroid.turnOff();
-         
+       	 myDroid.turnOff();  
      }
-    
+    }    
