@@ -1,6 +1,6 @@
 // In this program I use a switch statement that will print out a continent and its largest city
 
-public class Continents {
+public class continents {
 	public static void main(String[] args) {
     
     int continent = 4;
