@@ -40,7 +40,7 @@ public class Library{
     myBooks.add("El señor de los anillos", false);
     myBooks.add("La canción de hielo y fuego", false);
 
-
+    Library myLibrary = new Library;
 
   }
   
