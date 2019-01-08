@@ -117,6 +117,8 @@ public class GradeAnalyzer {
         myAnalyzer.getAverage(myClassroom);
 
         myAnalyzer.getLowestGrade(myClassroom);
+
+        myAnalyzer.getHighestGrade(myClassroom);
         
       }
   
