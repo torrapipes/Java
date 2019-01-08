@@ -29,5 +29,13 @@ public class Library{
     }
 
   }
+
+  public static void main(Strings[] args) {
+
+    HashMap<String, Boolean> myBooks = new HashMap<String, Boolean>();
+
+    
+
+  }
   
 }
