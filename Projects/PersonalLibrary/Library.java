@@ -6,9 +6,9 @@ public class Library{
     
   }
 
-  public void getFinishedBooks(HashMap<String, Boolean> myBooks){
+  public void getFinishedBooks(HashMap<String, Boolean> library){
 
-    if (myBooks.size() < 1) {
+    if (library.size() < 1) {
 
         System.out.println("Error! HashMap is empty.");
 
@@ -16,9 +16,9 @@ public class Library{
 
     else {
         
-        for (String book : myBooks.keySets()) {
+        for (String book : library.keySet()) {
 
-            if (myBooks.get(book) == true) {
+            if (library.get(book) == true) {
 
                 System.out.println(book);
 
@@ -30,7 +30,7 @@ public class Library{
 
   }
 
-  public static void main(Strings[] args) {
+  public static void main(String[] args) {
 
     HashMap<String, Boolean> myBooks = new HashMap<String, Boolean>();
 
