@@ -34,7 +34,13 @@ public class Library{
 
     HashMap<String, Boolean> myBooks = new HashMap<String, Boolean>();
 
-    
+    myBooks.add("El código Da Vincci", true);
+    myBooks.add("Barrufet", true);
+    myBooks.add("Los pilares de la tierra", false);
+    myBooks.add("El señor de los anillos", false);
+    myBooks.add("La canción de hielo y fuego", false);
+
+
 
   }
   
