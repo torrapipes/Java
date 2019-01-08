@@ -42,6 +42,8 @@ public class Library{
 
     Library myLibrary = new Library;
 
+    myLibrary.getFinishedBooks();
+    
   }
   
 }
