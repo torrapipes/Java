@@ -34,15 +34,15 @@ public class Library{
 
     HashMap<String, Boolean> myBooks = new HashMap<String, Boolean>();
 
-    myBooks.add("El código Da Vincci", true);
-    myBooks.add("Barrufet", true);
-    myBooks.add("Los pilares de la tierra", false);
-    myBooks.add("El señor de los anillos", false);
-    myBooks.add("La canción de hielo y fuego", false);
+    myBooks.put("El código Da Vincci", true);
+    myBooks.put("Barrufet", true);
+    myBooks.put("Los pilares de la tierra", false);
+    myBooks.put("El señor de los anillos", false);
+    myBooks.put("La canción de hielo y fuego", false);
 
     Library myLibrary = new Library();
 
-    myLibrary.getFinishedBooks();
+    myLibrary.getFinishedBooks(myBooks);
 
   }
   
