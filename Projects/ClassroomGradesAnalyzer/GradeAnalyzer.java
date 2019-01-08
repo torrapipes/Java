@@ -1,3 +1,5 @@
+// This program calculates, given an array of integers, its average, and its lowest and highest value. It's meant to be used in school scopes.
+
 import java.util.ArrayList;
 
 public class GradeAnalyzer {
@@ -10,7 +12,7 @@ public class GradeAnalyzer {
       
         if (grades.size() < 1) {
           
-          System.out.println("Error! The ArrayList is empty.");
+          System.out.println("Error! The array is empty.");
 
           return 0;
           
@@ -42,7 +44,7 @@ public class GradeAnalyzer {
         
         if (grades.size() < 1) {
           
-          System.out.println("Error! The ArrayList is empty.");
+          System.out.println("Error! The array is empty.");
           
           return 0;
           
@@ -74,7 +76,7 @@ public class GradeAnalyzer {
         
         if (grades.size() < 1) {
           
-          System.out.println("Error! The ArrayList is empty.");
+          System.out.println("Error! The array is empty.");
           
           return 0;
           
