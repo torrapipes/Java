@@ -28,7 +28,7 @@ public class GradeAnalyzer {
           
           int average = sum / grades.size();
           
-          System.out.println(average);
+          System.out.println("The grades' average is " + average);
           
           return average;
           
@@ -60,7 +60,7 @@ public class GradeAnalyzer {
            
          }
          
-         System.out.println(lowest);
+         System.out.println("The lowest grade is " + lowest);
           
         }
         
@@ -92,7 +92,7 @@ public class GradeAnalyzer {
            
          }
          
-         System.out.println(highest);
+         System.out.println("The highest grade is " + highest);
           
         }
         
