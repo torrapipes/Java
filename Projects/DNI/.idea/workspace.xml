@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbd10e88-8ce8-478f-95df-ba2f8770c59a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/DNI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DNI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
