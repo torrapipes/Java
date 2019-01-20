@@ -3,16 +3,15 @@ package Estacion;
 public class Estacion {
 
     private int id;
-    String direccion;
-    int numeroAnclajes;
-    int[] anclajes[numeroAnclajes];
+    private String direccion;
+    private int numeroAnclajes;
+    private int[] anclajes = new int[numeroAnclajes];
 
     public Estacion(int id, String direccion, int numeroAnclajes) {
 
         this.id = id;
         this.direccion = direccion;
         this.numeroAnclajes = numeroAnclajes;
-
     }
 
     public int getId() {
@@ -27,12 +26,44 @@ public class Estacion {
         return this.numeroAnclajes;
     }
 
-    public String consultarEstacion() {
-        System.out.println("El id de la estación es " + this.id + ", la dirección es " + this.direccion + " y el número de anclajes es " + this.numeroAnclajes);
+    public void consultarEstacion() {
+        System.out.println("Id: " + getId() + "\nDirección: " + getDireccion() + "\nNúmero de anclajes: " + getNumeroAnclajes());
     }
 
-    public int anclajesLibres() {
-        //int result = numeroAnclajes - anclajes.size();
-
+    public void anclajesLibres() {
+        int anclajesLibres = 0;
+        for (Integer element : anclajes) {
+            if (element !=0){
+                anclajesLibres++;
+            }
+        }
+        System.out.println("Anclajes libres: " + anclajesLibres);
     }
+
+    public void consultarAnclajes() {
+
+        int numeroAnclaje = 0;
+
+        for (element : anclajes){
+
+            if (element != null) {
+                numeroAnclaje ++ 1;
+                System.out.println("Anclaje " + numeroAnclaje + ": " + anclajes[posicion]);
+
+            }
+
+            else{
+
+                System.out.println("Anclaje " + numeroAnclaje + ": Libre");
+
+            }
+        }
+    }
+
+    public static void main (String[] args) {
+        Estacion manacor = new Estacion(001, "Manacor", 10);
+        manacor.consultarEstacion();
+        manacor.anclajesLibres();
+
+        }
 }
