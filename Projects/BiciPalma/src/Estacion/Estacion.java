@@ -5,13 +5,14 @@ public class Estacion {
     private int id;
     private String direccion;
     private int numeroAnclajes;
-    private int[] anclajes = new int[numeroAnclajes];
+    private int[] anclajes = null;
 
     public Estacion(int id, String direccion, int numeroAnclajes) {
 
         this.id = id;
         this.direccion = direccion;
         this.numeroAnclajes = numeroAnclajes;
+        this.anclajes = new int[numeroAnclajes];
 
     }
 
@@ -37,7 +38,7 @@ public class Estacion {
 
         for (Integer element : anclajes) {
 
-            if (element != 0){
+            if (element == 0){
 
                 anclajesLibres++;
 
@@ -56,15 +57,15 @@ public class Estacion {
 
             numeroAnclaje++;
 
-            if (element != null) {
+            if (element != 0) {
 
-                System.out.println("Anclaje: " + numeroAnclaje  + element);
+                System.out.println("Anclaje " + numeroAnclaje + ": "  + element);
 
             }
 
             else {
 
-                System.out.println("Anclaje: " + numeroAnclaje + "Libre");
+                System.out.println("Anclaje " + numeroAnclaje + ": Libre");
 
             }
         }
@@ -72,7 +73,7 @@ public class Estacion {
 
     public static void main (String[] args) {
         Estacion manacor = new Estacion(001, "Manacor", 10);
-        manacor.consultarAnclajes();
+
         manacor.anclajesLibres();
 
         }
