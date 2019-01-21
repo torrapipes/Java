@@ -12,6 +12,7 @@ public class Estacion {
         this.id = id;
         this.direccion = direccion;
         this.numeroAnclajes = numeroAnclajes;
+
     }
 
     public int getId() {
@@ -31,30 +32,39 @@ public class Estacion {
     }
 
     public void anclajesLibres() {
+
         int anclajesLibres = 0;
+
         for (Integer element : anclajes) {
-            if (element !=0){
+
+            if (element != 0){
+
                 anclajesLibres++;
+
             }
         }
+
         System.out.println("Anclajes libres: " + anclajesLibres);
+
     }
 
     public void consultarAnclajes() {
 
         int numeroAnclaje = 0;
 
-        for (element : anclajes){
+        for (Integer element : anclajes){
+
+            numeroAnclaje++;
 
             if (element != null) {
-                numeroAnclaje ++ 1;
-                System.out.println("Anclaje " + numeroAnclaje + ": " + anclajes[posicion]);
+
+                System.out.println("Anclaje: " + numeroAnclaje  + element);
 
             }
 
-            else{
+            else {
 
-                System.out.println("Anclaje " + numeroAnclaje + ": Libre");
+                System.out.println("Anclaje: " + numeroAnclaje + "Libre");
 
             }
         }
@@ -62,7 +72,7 @@ public class Estacion {
 
     public static void main (String[] args) {
         Estacion manacor = new Estacion(001, "Manacor", 10);
-        manacor.consultarEstacion();
+        manacor.consultarAnclajes();
         manacor.anclajesLibres();
 
         }
