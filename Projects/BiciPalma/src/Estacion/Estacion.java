@@ -1,11 +1,13 @@
 package Estacion;
 
+import Bicicleta.Bicicleta;
+
 public class Estacion {
 
     private int id;
     private String direccion;
     private int numeroAnclajes;
-    private int[] anclajes = null;
+    private int[] anclajes;
 
     public Estacion(int id, String direccion, int numeroAnclajes) {
 
@@ -71,10 +73,26 @@ public class Estacion {
         }
     }
 
+  /*
+   *  public void anclarBicicleta(Bicicleta) {
+
+        for (element : anclajes) {
+
+            if (element == 0) {
+
+                element = bicleta.id;
+                break;
+            }
+        }
+    } */
+
     public static void main (String[] args) {
+
         Estacion manacor = new Estacion(001, "Manacor", 10);
 
+        manacor.consultarEstacion();
         manacor.anclajesLibres();
+        manacor.consultarAnclajes();
 
         }
 }
