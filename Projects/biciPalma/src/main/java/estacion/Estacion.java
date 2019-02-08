@@ -1,17 +1,17 @@
 package estacion;
 
-import java.util.Arrays;
-
+import java.util.concurrent.ThreadLocalRandom;
 import bicicleta.Bicicleta;
+import tarjetaUsuario.TarjetaUsuario;
 
 public class Estacion {
 
+	
     private int id;
     private String direccion;
     private int numeroAnclajes;
     private Bicicleta[] bicicletas;
     
-   
 
     public Estacion(int id, String direccion, int numeroAnclajes) {
 
@@ -65,13 +65,13 @@ public class Estacion {
 
         int numeroAnclaje = 0;
 
-        for (Bicicleta element : bicicletas){
+        for (Bicicleta element : this.bicicletas){
 
             numeroAnclaje++;
 
             if (element != null) {
 
-                System.out.println("Anclaje " + numeroAnclaje + ": "  + element);
+                System.out.println("Anclaje " + numeroAnclaje + ": "  + element.getId());
 
             }
 
@@ -84,30 +84,95 @@ public class Estacion {
     }
     
     
+    public void anclarBicicleta(Bicicleta bicicleta) {
 
-  /*
-   *  public void anclarBicicleta(Bicicleta) {
+	  	int posicion = 0;
+	  	
+        for (Bicicleta element : this.bicicletas) {
 
-        for (element : anclajes) {
+            if (element == null) {
 
-            if (element == 0) {
-
-                element = bicleta.id;
+                this.bicicletas[posicion] = bicicleta;
+                mostrarAnclaje(bicicleta, posicion + 1);
                 break;
             }
+            else {
+            	posicion ++;
+            }
         }
-    } */
+    }
+  
+  
+    public void leerTarjetaUsuario(TarjetaUsuario tarjetaUsuario) {
+	  
+	    if (tarjetaUsuario.getEstado() == true) {
+		  
+		    System.out.println("La tarjeta está activada");
+		  
+	    }
+	    else {
+		  
+		    System.out.println("La tarjeta no está activada");
+		  
+	    }
+	  
+	  
+     }
+  
+  
+    public void mostrarAnclaje(Bicicleta bicicleta, int anclaje) {
+	    System.out.println("La bicicleta " + bicicleta.getId() + " ha sido anclada en el anclaje " + anclaje);
+    }
+    
+    
+    public void mostrarAnclajeRetirada(Bicicleta bicicleta, int anclaje) {
+	    System.out.println("La bicicleta " + bicicleta.getId() + " ha sido retirada del anclaje " + anclaje);
+    }
+  
+  
+    public void retirarBicicleta(TarjetaUsuario tarjeta) {
+	  
+    	boolean biciSacada = false;
+    		
+	    while(!biciSacada) {
+		  
+		    int posicion = generarAnclaje();
+		  
+		    if (this.bicicletas[posicion] != null) {
+				  
+				    mostrarAnclajeRetirada(this.bicicletas[posicion], posicion + 1);
+				    this.bicicletas[posicion] = null;
+				    biciSacada = true;
+				  
+			    }
+		    
+		    else;
+		  
+	    }
+    }
+  
+  
+    public int generarAnclaje() {
+    	
+    	return ThreadLocalRandom.current().nextInt(0, this.bicicletas.length);
+
+    }
 
     
     public static void main (String[] args) {
 
-        Estacion manacor = new Estacion(001, "Manacor", 10);
+        Estacion calleManacor = new Estacion(001, "Calle Manacor", 5);
+        Bicicleta bicicleta = new Bicicleta(007);
+        TarjetaUsuario tarjeta = new TarjetaUsuario(000000001, true);
         
-
-        manacor.consultarEstacion();
-        manacor.anclajesLibres();
-        manacor.consultarAnclajes();
-        
+        calleManacor.consultarEstacion();
+        calleManacor.anclajesLibres();
+        calleManacor.anclarBicicleta(bicicleta);
+        calleManacor.consultarAnclajes();
+        calleManacor.retirarBicicleta(tarjeta);
+        calleManacor.consultarAnclajes();
+    
         }
 }
+
 
