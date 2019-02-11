@@ -18,4 +18,9 @@ public class Bicicleta {
 		
 	}
 	
+	@Override
+	public String toString() {
+		return "Bicicleta " + id;
+	}
+	
 }
