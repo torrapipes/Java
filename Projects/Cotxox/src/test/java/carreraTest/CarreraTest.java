@@ -43,6 +43,23 @@ public class CarreraTest {
 	
 	
 	@Test
+	public void getDestino() {
+		
+		int tiempo = 10;
+		String conductor = "Mike";
+		String tarjeta = "0123K";
+		String origen = "Maria";
+		String destino = "Manacor";
+		double distancia = 40.1;
+		
+		Carrera carrera = new Carrera(tiempo, conductor, tarjeta, origen, destino, distancia);
+		
+		assertEquals(destino, carrera.getDestino());
+		
+	}
+	
+	
+	@Test
 	public void getDistancia() {
 		
 		int tiempo = 10;

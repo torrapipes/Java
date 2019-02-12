@@ -38,6 +38,13 @@ public class Carrera {
 	}
 	
 	
+	public String getDestino() {
+		
+		return this.destino;
+		
+	}
+	
+	
 	public double getDistancia() {
 		
 		return this.distancia;
