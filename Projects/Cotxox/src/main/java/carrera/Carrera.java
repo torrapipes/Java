@@ -23,16 +23,31 @@ public class Carrera {
 		
 	}
 	
+	
 	public String getTarjetaCredito() {
+		
 		return this.tarjetaCredito;
+		
 	}
+	
 	
 	public String getOrigen() {
+		
 		return this.origen;
+		
 	}
 	
-    public static void main( String[] args )
-    {
-        
+	
+	public double getDistancia() {
+		
+		return this.distancia;
+		
+	}
+	
+	
+    public static void main( String[] args ) {
+
+    	
+    	
     }
 }
