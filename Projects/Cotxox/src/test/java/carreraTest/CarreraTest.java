@@ -75,5 +75,42 @@ public class CarreraTest {
 		
 	}
 	
+	@Test
+	public void realizarPagoTest() {
+		
+		int tiempo = 10;
+		String conductor = "Mike";
+		String tarjeta = "0123K";
+		String origen = "Maria";
+		String destino = "Manacor";
+		double distancia = 40.1;
+		
+		Carrera carrera = new Carrera(tiempo, conductor, tarjeta, origen, destino, distancia);
+		
+		carrera.realizarPago(4);
+		
+		assertEquals(4, carrera.getPago());
+		
+	}
+	
+	@Test
+	public void recibirPropina() {
+		
+		int tiempo = 10;
+		String conductor = "Mike";
+		String tarjeta = "0123K";
+		String origen = "Maria";
+		String destino = "Manacor";
+		double distancia = 40.1;
+		
+		Carrera carrera = new Carrera(tiempo, conductor, tarjeta, origen, destino, distancia);
+		
+		carrera.recibirPropina(5);
+		assertEquals(5, carrera.getPropina());
+		
+	}
+	
+	
+	
 	
 }

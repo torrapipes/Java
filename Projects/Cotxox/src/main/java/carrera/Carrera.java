@@ -10,7 +10,7 @@ public class Carrera {
 	private String origen;
 	private String destino;
 	private double distancia;
-	
+	private int propina;
 	
 	public Carrera(int tiempoEsperado, String conductor, String tarjetaCredito, String origen, String destino, double distancia) {
 		
@@ -52,9 +52,33 @@ public class Carrera {
 	}
 	
 	
-    public static void main( String[] args ) {
+	public void realizarPago(int pago) {
+		
+		this.costeTotal = pago;
+		
+	}
+	
+	
+	public int getPago() {
+		
+		return this.costeTotal;
+		
+	}
+	
+	
+	public void recibirPropina(int propina) {
+		
+		this.propina = propina;
+		
+	}
+	
+	
+	public int getPropina() {
+		
+		return this.propina;
+		
+	}
+	
+	
 
-    	
-    	
-    }
 }
