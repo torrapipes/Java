@@ -82,7 +82,7 @@ public class Address {
     public String toString() {
 
         return "PK = " + this.getPK().hashCode() +
-                "\n" + "balance = " + this.getBalance() + " " + this.getSymbol() ;
+                "\n" + "balance = " + this.getBalance() + " " + this.symbol() ;
 
     }
 }
