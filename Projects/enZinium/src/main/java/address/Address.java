@@ -14,6 +14,7 @@ public class Address {
     private PublicKey PK = null;
     private PrivateKey SK = null;
     private String symbol = "EZI";
+    private double balance = 0d;
 
     public Address() {
     }
@@ -31,6 +32,13 @@ public class Address {
     public PrivateKey getSK() {
 
         return this.SK;
+
+    }
+
+
+    public double getBalance() {
+
+        return balance;
 
     }
 
@@ -62,6 +70,21 @@ public class Address {
 
     }
 
+
+    public String symbol() {
+
+        return this.symbol;
+
+    }
+
+
+    @Override
+    public String toString() {
+
+        return "PK = " + this.getPK().hashCode() +
+                "\n" + "balance = " + this.getBalance() + " " + this.getSymbol() ;
+
+    }
 }
 
 
