@@ -15,13 +15,17 @@ public class TokenContractTest {
 
     private TokenContract tk;
     private Address ad;
+    private Address ad1;
 
 
     @Before
     public void init(){
 
         ad = new Address();
+        ad1 = new Address();
+
         ad.generateKeyPair();
+        ad1.generateKeyPair();
 
         tk = new TokenContract(ad);
 
@@ -90,6 +94,17 @@ public class TokenContractTest {
         tk.addOwner(ad.getPK(), cantidad);
 
         assertEquals(cantidad, tk.getBalances().get(ad.getPK()));
+
+    }
+
+
+    @Test
+    public void numOwnersTest(){
+
+        tk.getBalances().put(ad.getPK(), 100d);
+        tk.getBalances().put(ad1.getPK(), 100d);
+
+        assertEquals(2, tk.numOwners());
 
     }
 

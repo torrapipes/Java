@@ -93,6 +93,9 @@ public class TokenContract {
 
     }
 
+
+    public void num
+
     @Override
     public String toString() {
 
