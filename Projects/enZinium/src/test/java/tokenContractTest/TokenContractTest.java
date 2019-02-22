@@ -16,6 +16,7 @@ public class TokenContractTest {
     private TokenContract tk;
     private Address ad;
     private Address ad1;
+    private Address ad2;
 
 
     @Before
@@ -23,9 +24,11 @@ public class TokenContractTest {
 
         ad = new Address();
         ad1 = new Address();
+        ad1 = new Address();
 
         ad.generateKeyPair();
         ad1.generateKeyPair();
+        ad2.generateKeyPair();
 
         tk = new TokenContract(ad);
 
@@ -105,6 +108,19 @@ public class TokenContractTest {
         tk.getBalances().put(ad1.getPK(), 100d);
 
         assertEquals(2, tk.numOwners());
+
+    }
+
+
+    @Test
+    public void balanceOfTest(){
+
+        double cincuenta = 50d;
+
+        tk.getBalances().put(ad.getPK(), cincuenta);
+
+        assertEquals(cincuenta, tk.balanceOf(ad.getPK(), cincuenta), 0d);
+        assertEquals(0d, tk.balanceOf(ad2.getPK(), cincuenta), 0d);
 
     }
 
