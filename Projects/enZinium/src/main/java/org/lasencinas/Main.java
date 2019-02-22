@@ -141,7 +141,7 @@ public class Main {
 
         System.out.println("\n" + "Numero de propietarios: " + ricknillos.numOwners());
 
-        System.out.println("Entradas de Rick: "
+        /*System.out.println("Entradas de Rick: "
                 + ricknillos.balanceOf(rick.getPK())
                 + " "
                 + ricknillos.symbol());
@@ -149,7 +149,7 @@ public class Main {
         System.out.println("Entradas de Morty: "
                 + ricknillos.balanceOf(morty.getPK())
                 + " "
-                + ricknillos.symbol());
+                + ricknillos.symbol());*/
 
     }
 }

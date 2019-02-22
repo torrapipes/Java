@@ -94,7 +94,14 @@ public class TokenContract {
     }
 
 
-    public void num
+    public int numOwners(){
+
+        return this.getBalances().size();
+
+    }
+
+
+
 
     @Override
     public String toString() {
