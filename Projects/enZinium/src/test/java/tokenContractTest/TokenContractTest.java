@@ -79,6 +79,18 @@ public class TokenContractTest {
 
     }
 
+
+    @Test
+    public void addOwnerTest(){
+
+        double cantidad = 25;
+
+        tk.addOwner(ad, cantidad);
+
+        assertEquals(cantidad, tk.getBalances().get(ad));
+
+    }
+
    /* @Test
     public void payable_test() {
 
