@@ -35,6 +35,12 @@ public class TokenContract {
     }
 
 
+    public Map<PublicKey, Double> getBalances(){
+
+        return this.balances;
+
+    }
+
     // Setters
 
     public void setName(String name) {
@@ -77,6 +83,13 @@ public class TokenContract {
     public double totalSupply() {
 
         return totalSupply;
+
+    }
+
+
+    public void addOwner(PublicKey PK, double cantidad){
+
+        this.getBalances().putIfAbsent(PK, cantidad);
 
     }
 

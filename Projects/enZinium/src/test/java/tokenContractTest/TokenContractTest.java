@@ -21,6 +21,8 @@ public class TokenContractTest {
     public void init(){
 
         ad = new Address();
+        ad.generateKeyPair();
+
         tk = new TokenContract(ad);
 
     }
@@ -85,9 +87,17 @@ public class TokenContractTest {
 
         double cantidad = 25;
 
-        tk.addOwner(ad, cantidad);
+        tk.addOwner(ad.getPK(), cantidad);
 
-        assertEquals(cantidad, tk.getBalances().get(ad));
+        assertEquals(cantidad, tk.getBalances().get(ad.getPK()));
+
+    }
+
+
+    @Test
+    public void getBalancesTest(){
+
+        assertNotNull(tk.getBalances());
 
     }
 
