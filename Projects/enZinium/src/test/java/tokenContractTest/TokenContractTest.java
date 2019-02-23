@@ -24,7 +24,7 @@ public class TokenContractTest {
 
         ad = new Address();
         ad1 = new Address();
-        ad1 = new Address();
+        ad2 = new Address();
 
         ad.generateKeyPair();
         ad1.generateKeyPair();
@@ -119,8 +119,8 @@ public class TokenContractTest {
 
         tk.getBalances().put(ad.getPK(), cincuenta);
 
-        assertEquals(cincuenta, tk.balanceOf(ad.getPK(), cincuenta), 0d);
-        assertEquals(0d, tk.balanceOf(ad2.getPK(), cincuenta), 0d);
+        assertEquals(cincuenta, tk.balanceOf(ad.getPK()), 0d);
+        assertEquals(0d, tk.balanceOf(ad2.getPK()), 0d);
 
     }
 

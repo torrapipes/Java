@@ -101,7 +101,20 @@ public class TokenContract {
     }
 
 
+    public double balanceOf(PublicKey PK){
 
+        try{
+
+            return this.getBalances().get(PK);
+
+        }
+        catch(NullPointerException e){
+
+            return 0d;
+
+        }
+
+    }
 
     @Override
     public String toString() {
