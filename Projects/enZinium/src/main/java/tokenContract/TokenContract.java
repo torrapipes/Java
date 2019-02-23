@@ -116,6 +116,45 @@ public class TokenContract {
 
     }
 
+
+    public void require(boolean holds){
+
+        if(!holds){
+
+            System.out.println("No dispones de suficientes tokens!");
+
+        }
+
+    }
+
+
+    public void transfer(PublicKey PKDestinatario, double cantidad){
+
+        double suma = 0d;
+        boolean holds = true;
+
+        if(cantidad > this.getBalances().get(this.getOwnerPK())){
+
+            holds = false;
+            this.require(false);
+
+        }
+        else {
+            double deduccion = this.getBalances().get(this.getOwnerPK()) - cantidad;
+
+            try {
+                suma = this.getBalances().get(PKDestinatario) + cantidad;
+            } catch (NullPointerException e) {
+
+                suma = cantidad;
+
+            }
+
+            this.getBalances().put(this.getOwnerPK(), deduccion);
+            this.getBalances().put(PKDestinatario, suma);
+        }
+    }
+
     @Override
     public String toString() {
 
