@@ -156,6 +156,20 @@ public class TokenContractTest {
     }
 
 
+    @Test
+    public void totalTokensTest(){
+
+        tk.addOwner(ad.getPK(), 100);
+
+        tk.transfer(ad1.getPK(), 10 );
+        tk.transfer(ad2.getPK(), 20);
+        tk.transfer(ad1.getPK(), ad2.getPK(), 5);
+
+        assertEquals("30", tk.totalTokensSold());
+
+    }
+
+
 
    /* @Test
     public void payable_test() {

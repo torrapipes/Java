@@ -3,6 +3,7 @@ package tokenContract;
 import address.Address;
 
 import java.security.PublicKey;
+import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -209,6 +210,24 @@ public class TokenContract {
     }
 
 
+    public String totalTokensSold() {
+
+        int total = 0;
+
+        for (PublicKey key : this.getBalances().keySet()){
+
+            if(key != this.getOwnerPK()){
+
+                total += this.getBalances().get(key);
+
+            }
+
+        }
+
+        return NumberFormat.getInstance().format(total);
+
+    }
+
     @Override
     public String toString() {
 
@@ -219,4 +238,6 @@ public class TokenContract {
                 "totalSupply = " + this.totalSupply();
 
     }
+
+
 }
