@@ -153,6 +153,8 @@ public class TokenContract {
         }
 
     }
+
+
     public void transfer(PublicKey PKDestinatario, double cantidad){
 
             try {
@@ -183,12 +185,27 @@ public class TokenContract {
 
     }
 
+
     private void deduccionReventa(PublicKey PKOrigen, double cantidad) {
 
         double deduccion = this.getBalances().get(PKOrigen) - cantidad;
 
         this.getBalances().put(PKOrigen, deduccion);
 
+    }
+
+
+    public void owners(){
+
+        for(PublicKey key : this.getBalances().keySet()){
+
+            if(key != this.getOwnerPK()) {
+
+                System.out.println("Owner: " + key.hashCode() + " " + this.getBalances().get(key) + " " + this.symbol());
+
+            }
+
+        }
     }
 
 
