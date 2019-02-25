@@ -121,38 +121,45 @@ public class TokenContract {
 
         if(!holds){
 
-            System.out.println("No dispones de suficientes tokens!");
+            throw new AssertionError();
 
         }
 
     }
 
+    public void deduccion(double cantidad){
 
+        double deduccion = this.getBalances().get(this.getOwnerPK()) - cantidad;
+        this.getBalances().put(this.getOwnerPK(), deduccion);
+
+    }
+
+
+    public void suma(PublicKey PKDestinatario, double cantidad){
+
+        double suma = cantidad;
+
+        if(this.getBalances().containsKey(PKDestinatario)) {
+
+            suma = suma + this.getBalances().get(PKDestinatario);
+
+        }
+        else{}
+
+        this.getBalances().put(PKDestinatario, suma);
+
+    }
     public void transfer(PublicKey PKDestinatario, double cantidad){
 
-        double suma = 0d;
-        boolean holds = true;
-
-        if(cantidad > this.getBalances().get(this.getOwnerPK())){
-
-            holds = false;
-            this.require(false);
-
-        }
-        else {
-            double deduccion = this.getBalances().get(this.getOwnerPK()) - cantidad;
-
             try {
-                suma = this.getBalances().get(PKDestinatario) + cantidad;
-            } catch (NullPointerException e) {
+                require((cantidad < this.getBalances().get(this.getOwnerPK())));
 
-                suma = cantidad;
+                deduccion(cantidad);
 
+                suma(PKDestinatario, cantidad);
             }
+            catch(AssertionError e){}
 
-            this.getBalances().put(this.getOwnerPK(), deduccion);
-            this.getBalances().put(PKDestinatario, suma);
-        }
     }
 
     @Override

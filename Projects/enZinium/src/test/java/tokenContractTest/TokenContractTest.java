@@ -136,8 +136,7 @@ public class TokenContractTest {
     @Test
     public void transferTest(){
 
-        tk.setTotalSupply(15d);
-
+        tk.addOwner(ad.getPK(), 15d);
         tk.transfer(ad2.getPK(), 10d);
 
         assertEquals(5d, tk.getBalances().get(tk.getOwnerPK()), 0d);
