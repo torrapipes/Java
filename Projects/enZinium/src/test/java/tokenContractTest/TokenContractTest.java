@@ -144,6 +144,18 @@ public class TokenContractTest {
     }
 
 
+    @Test
+    public void transferReventaTest(){
+
+        tk.getBalances().put(ad1.getPK(),20d);
+        tk.transfer(ad1.getPK(), ad2.getPK(), 10d);
+        System.out.println(tk.getBalances().get(ad2.getPK()));
+
+        assertEquals(10d, tk.getBalances().get(ad2.getPK()), 0d);
+
+    }
+
+
 
    /* @Test
     public void payable_test() {

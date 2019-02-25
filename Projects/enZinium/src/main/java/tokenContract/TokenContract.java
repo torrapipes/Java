@@ -119,7 +119,7 @@ public class TokenContract {
 
     public void require(boolean holds){
 
-        if(!holds){
+        if(holds){
 
             throw new AssertionError();
 
@@ -139,28 +139,58 @@ public class TokenContract {
 
         double suma = cantidad;
 
-        if(this.getBalances().containsKey(PKDestinatario)) {
+        try{
 
-            suma = suma + this.getBalances().get(PKDestinatario);
+            suma += this.getBalances().get(PKDestinatario);
+
+            this.getBalances().put(PKDestinatario, suma);
 
         }
-        else{}
+        catch(NullPointerException e){
 
-        this.getBalances().put(PKDestinatario, suma);
+            this.getBalances().put(PKDestinatario, suma);
+
+        }
 
     }
     public void transfer(PublicKey PKDestinatario, double cantidad){
 
             try {
-                require((cantidad < this.getBalances().get(this.getOwnerPK())));
+                require((cantidad > this.getBalances().get(this.getOwnerPK())));
 
                 deduccion(cantidad);
 
                 suma(PKDestinatario, cantidad);
+
             }
             catch(AssertionError e){}
 
     }
+
+
+    public void transfer(PublicKey PKOrigen, PublicKey PKDestinatario, double cantidad){
+
+        try{
+
+            require(cantidad > this.getBalances().get(PKOrigen));
+
+            deduccionReventa(PKOrigen, cantidad);
+
+            suma(PKDestinatario, cantidad);
+
+        }
+        catch( AssertionError e){}
+
+    }
+
+    private void deduccionReventa(PublicKey PKOrigen, double cantidad) {
+
+        double deduccion = this.getBalances().get(PKOrigen) - cantidad;
+
+        this.getBalances().put(PKOrigen, deduccion);
+
+    }
+
 
     @Override
     public String toString() {
