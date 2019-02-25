@@ -78,6 +78,13 @@ public class Address {
     }
 
 
+    public void addEZI(double cantidad){
+
+        this.balance = cantidad;
+
+    }
+
+
     @Override
     public String toString() {
 

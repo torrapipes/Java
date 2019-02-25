@@ -4,6 +4,7 @@ import address.Address;
 import org.junit.Before;
 import org.junit.Test;
 
+import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertNotNull;
 
 public class AddressTest {
@@ -59,6 +60,13 @@ public class AddressTest {
 
     }
 
+    @Test
+    public void addEZITest(){
+
+        address.addEZI(10d);
+        assertEquals(10d, address.getBalance());
+
+    }
 
    /** @Test
     public void transferEZI_test() {
